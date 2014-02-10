@@ -455,6 +455,8 @@ const CGFloat NIPagingScrollViewDefaultPageMargin = 10;
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
   [self didAnimateToPage:_animatingToPageIndex];
+  [self resetSurroundingPages];
+
 
   if ([self.delegate respondsToSelector:_cmd]) {
     [self.delegate scrollViewDidEndScrollingAnimation:scrollView];
